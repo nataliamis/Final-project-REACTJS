@@ -1,0 +1,176 @@
+* {
+  font-family: 'Montserrat', 'sans-serif';
+}
+
+header {
+  width: 100%;
+  .menu {
+    display: flex;
+    margin-left: 150px;
+    box-shadow: lightpink;
+    li {
+      list-style: none;
+      display: inline-block;
+      flex-grow: 1;
+    }
+  }
+}
+.homeStyle {
+  background-image: url('./../images/austin-chan-275640.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 700px;
+  width: 100%;
+}
+
+.home {
+  color: whitesmoke;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 230px;
+}
+.aboutMe {
+  margin: 0 auto;
+  width: 90%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  .birth {
+    display: block;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    .birthPic {
+      background-image: url('./../images/Baby_Girl-512.png');
+      width: 50px;
+      height: 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      justify-content: center;
+
+    }
+  }
+}
+
+.birth::after {
+  content: '';
+  background-image: url('./../images/jeremy-thomas-79493.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.location {
+  display: block;
+  position: relative;
+  margin-top: 50px;
+  height: 300px;
+  width: 100%;
+   .locationPic {
+     background-image: url('./../images/660011-location-512.png');
+     width: 50px;
+     height: 50px;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+    }
+  }
+
+.location::after {
+  content: '';
+  background-image: url('./../images/anders-jilden-295809.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.map {
+    margin-top: 30px;
+  .google-map {
+    height: 250px;
+    width: 100%;
+  }
+}
+.study {
+  display: block;
+  position: relative;
+  margin-top: 50px;
+  height: 300px;
+  width: 100%;
+  .hatPic {
+    background-image: url('./../images/Hat-512.png');
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &::after {
+    content: '';
+    background-image: url('./../images/jeshoots-com-219386.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+.abilities {
+  display: block;
+  position: relative;
+  margin-top: 50px;
+  height: 300px;
+  width: 100%;
+  .brainPic {
+    background-image: url('./../images/if_ArtificialIntelligence12_2890565.png');
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.abilities::after {
+  content: '';
+  background-image: url('./../images/markus-spiske-109588.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.pictures {
+  img {
+    height: 600px;
+    width: 500px;
+  }
+  height: 200px;
+  width: 300px;
+}
+
