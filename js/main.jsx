@@ -48,43 +48,75 @@ document.addEventListener('DOMContentLoaded', function () {
             )
         }
     }
-
+    class Abilities extends React.Component {
+        render () {
+            let spans = [];
+            for(let i = 0; i < 5; i++) {
+                spans.push(<span className = {`${this.props.ab}${i}`}
+                                 key = {`${this.props.ab}${i}`}/>);
+            }
+            return <div>
+            { spans }
+            </div>
+        }
+    }
     class AboutMe extends React.Component {
         render() {
             return (
-            <div className='aboutMe'>
-                <div className='birth'>
-                    <div className='birthPic'></div>
-                    <h1>NARODZINY</h1>
-                    <p>Najpiękniejsza pora roku.. Jesień! Właśnie wtedy - w 1997 roku
-                        na świat przyszłam ja!
-                    </p>
-                </div>
-                <div className='location'>
-                    <div className='locationPic'></div>
-                    <h1>DORASTAŁAM TUTAJ...</h1>
-                    <p>Urodziłam się w turystycznej miejscowości Segovia - w Hiszpanii, niedługo
-                        jednak po narodzinach - <br></br> wraz z rodzicami, przeprowadziliśmy się do Mielca,
-                        znajdującego się na Podkarpaciu (rodzinnego miasta moich rodziców).
-                    </p>
-                </div>
-                <section className='map'>
-                    <Map/>
-                </section>
-                <div className='study'>
+                <div className='aboutMe'>
+                    <div className='birth'>
+                        <div className='birthPic'></div>
+                        <h1>NARODZINY</h1>
+                        <p>Najpiękniejsza pora roku.. Jesień! Właśnie wtedy - w 1997 roku
+                            na świat przyszłam ja!
+                        </p>
+                    </div>
+                    <div className='location'>
+                        <div className='locationPic'></div>
+                        <h1>DORASTAŁAM TUTAJ...</h1>
+                        <p>Urodziłam się w turystycznej miejscowości Segovia - w Hiszpanii, niedługo
+                            jednak po narodzinach - <br></br> wraz z rodzicami, przeprowadziliśmy się do Mielca,
+                            znajdującego się na Podkarpaciu (rodzinnego miasta moich rodziców).
+                        </p>
+                    </div>
+                    <section className='map'>
+                        <Map/>
+                    </section>
+                    <div className='study'>
                         <div className='hatPic'></div>
                         <h1>HISTORIA SZKOŁY</h1>
-                        <p>GRERETRDGDERTFfgrgfdgfddgdgrtgdfdgfdggddfGDRGTSEFEGF</p>
-                </div>
-                <div className='abilities'>
-                    <div className='brainPic'></div>
-                    <h1>UMIEJĘTNOŚCI</h1>
-                    <p>ednak po narodzinach - wraz z rodzicami, przeprowadziliśmy się do Mielca,
-                        znajdującego się na Podkarpaciu (rodzinnego miasta
-                    </p>
-                </div>
+                        <p>Niestety nie mam wykształcenia typowo informatycznego, jestem w trakcie<br></br>
+                            studiów na kierunku kosmetologia - jednak podjęłam decyzję o zmianie branży!<br></br>
+                            Zawsze interesowało mnie projektowanie stron internetowych, dlatego zdecydowałam<br></br>
+                            o wybraniu się na BootCamp w szkole programowania CodersLab. Obecnie ukończyłam 2-miesięczny<br></br>
+                            kurs Front-End Developer i poszukuję pracy jako Junior w tej dziedzinie :)</p>
+                    </div>
+                    <div className='abilities'>
+                        <div className='brainPic'></div>
+                        <h1>UMIEJĘTNOŚCI</h1>
+                        <div className='js'>
+                            JAVASCRIPT
+                            <Abilities ab = 'js' />
+                        </div>
+                        <div className='reactjs'>
+                            REACT JS
+                            <Abilities  ab = 're' />
+                        </div>
+                        <div className='htmlcss'>
+                            HTML/CSS
+                            <Abilities ab = 'htm'  />
+                        </div>
+                        <div className='jquery'>
+                            JQUERY
+                            <Abilities ab = 'jq'  />
+                        </div>
+                        <div className='ajax'>
+                            AJAX
+                            <Abilities ab = 'aj'  />
+                        </div>
+                    </div>
 
-            </div>
+                </div>
             )
 
         }
@@ -96,12 +128,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             this.state = {
                 position: 1,
-                interval: null
+                interval: null,
             };
         }
 
         componentDidMount() {
-                this.interval = setInterval(() => {
+            this.interval = setInterval(() => {
                 this.setState({
                     position: this.state.position === 1 ? 0 : this.state.position + 1});
             }, 2000)
@@ -113,22 +145,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         render() {
             const images = [
-                './images/screen1.png',
-                './images/Baby_Girl-512.png',
+                {img: './images/screen1.png',
+                 url: 'https://nataliamis.github.io/course-HTML-CSS/'},
+                {img: './images/screen2.png',
+                 url: 'https://nataliamis.github.io/Binary-Decimal-Calculator/'}
             ];
 
             return ( <div className='pictures'>
-                    <img src={images[this.state.position]}/>
-                </div>
-
-            );
+                <a href = {images[this.state.position].url}><img src={images[this.state.position].img}/></a>
+            </div>
+            )
         }
     }
 
     class Projects extends React.Component {
         render() {
             return <div>
-            <h1>Projekty</h1>
+                <h1>Projekty</h1>
                 <Slider/>
             </div>
         }
@@ -136,24 +169,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     class Contact extends React.Component {
         render() {
-            return <h1>kontakt!</h1>
-        }
-    }
+            const url1 = ['https://www.facebook.com/natalia.misiewicz'];
+            const url2 = ['https://www.facebook.com/natalia.misiewicz'];
 
-//sekcja pierwsza
-    class SectionFirst extends React.Component {
-        render() {
-            return <section>
+            return <div className='contact'>
+                <h1>Kontakt</h1>
+                <h2>Dane kontaktowe</h2>
+                <div>Telefon: 535 875 464 <br></br>
+                    E-mail: nataliamisiewicz1@gmail.com
+                </div>
+                <div className = 'media'>
+                    <a href = {url1}><div className='fb'></div></a>
+                    <a href = {url2}><div className='fb'></div></a>
+                </div>
+            </div>
 
-            </section>
-        }
-    }
-
-    class SectionSecond extends React.Component {
-        render() {
-            return <section>
-
-            </section>
         }
     }
 
