@@ -1,129 +1,107 @@
+
+
 * {
   font-family: 'Montserrat', 'sans-serif';
 }
-
-header {
-  width: 100%;
-  .menu {
-    display: flex;
-    margin-left: 150px;
-    box-shadow: lightpink;
-    li {
-      list-style: none;
-      display: inline-block;
-      flex-grow: 1;
-    }
-  }
-}
-.homeStyle {
-  background-image: url('./../images/austin-chan-275640.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+body {
   height: 700px;
   width: 100%;
-}
-
-.home {
-  color: whitesmoke;
-  font-size: 40px;
-  text-align: center;
-  padding-top: 230px;
-}
-.aboutMe {
-  margin: 0 auto;
-  width: 90%;
-  color: white;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  .birth {
-    display: block;
-    position: relative;
-    height: 300px;
-    width: 100%;
-    .birthPic {
-      background-image: url('./../images/Baby_Girl-512.png');
-      width: 50px;
-      height: 50px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      justify-content: center;
-
+  background-color: white;
+  .loader {
+    & > div {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      background-color: #ccc;
+      top: 45%;
+      border-radius: 50%;
     }
   }
 }
 
-.birth::after {
-  content: '';
-  background-image: url('./../images/jeremy-thomas-79493.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+.loader {
+  & > div:nth-child(1) {
+    background-color: purple;
+    animation: move 2s infinite cubic-bezier(.2, .64, .81, .23);
+  }
 }
-.location {
-  display: block;
-  position: relative;
-  margin-top: 50px;
-  height: 300px;
-  width: 100%;
-   .locationPic {
-     background-image: url('./../images/660011-location-512.png');
-     width: 50px;
-     height: 50px;
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
+.loader {
+  & > div:nth-child(2) {
+    background-color: palevioletred;
+    animation: move 2s 150ms infinite cubic-bezier(.2, .64, .81, .23);
+  }
+}
+.loader {
+  & > div:nth-child(3) {
+    background-color: violet;
+    animation: move 2s 300ms infinite cubic-bezier(.2, .64, .81, .23);
+  }
+}
+
+
+  @keyframes move {
+    0% {left: 0%;}
+    100% {left:100%;}
+  }
+  header {
+    width: 100%;
+    border: 2px outset palevioletred;
+    .menu {
+      display: flex;
+      margin-left: 150px;
+      li {
+        list-style: none;
+        display: inline-block;
+        flex-grow: 1;
+      }
     }
   }
-
-.location::after {
-  content: '';
-  background-image: url('./../images/anders-jilden-295809.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-.map {
-    margin-top: 30px;
-  .google-map {
-    height: 250px;
-    width: 100%;
-  }
-}
-.study {
-  display: block;
-  position: relative;
-  margin-top: 50px;
-  height: 300px;
-  width: 100%;
-  .hatPic {
-    background-image: url('./../images/Hat-512.png');
-    width: 50px;
-    height: 50px;
-    background-position: center;
-    background-repeat: no-repeat;
+  .homeStyle {
+    background-image: url('./../images/austin-chan-275640.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    width: 100%;
   }
-  &::after {
+
+  .home {
+    color: whitesmoke;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 230px;
+  }
+  .aboutMe {
+    margin: 0 auto;
+    width: 90%;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .birth {
+      display: block;
+      position: relative;
+      height: 300px;
+      width: 100%;
+      .birthPic {
+        background-image: url('./../images/Baby_Girl-512.png');
+        width: 50px;
+        height: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+
+      }
+    }
+  }
+  .birth:hover {
+  height: 330px;
+  border: 3px outset darkgrey;
+  }
+  .birth::after {
     content: '';
-    background-image: url('./../images/jeshoots-com-219386.jpg');
+    background-image: url('./../images/jeremy-thomas-79493.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -135,160 +113,256 @@ header {
     position: absolute;
     z-index: -1;
   }
-}
-.abilities {
-  display: block;
-  position: relative;
-  margin-top: 50px;
-  height: 400px;
-  width: 100%;
-  .brainPic {
-    background-image: url('./../images/if_ArtificialIntelligence12_2890565.png');
-    width: 50px;
-    height: 50px;
-    background-position: center;
-    background-repeat: no-repeat;
+  .location {
+    display: block;
+    position: relative;
+    margin-top: 50px;
+    height: 300px;
+    width: 100%;
+    .locationPic {
+      background-image: url('./../images/660011-location-512.png');
+      width: 50px;
+      height: 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  .location:hover {
+    height: 330px;
+    border: 3px outset darkgrey;
+  }
+  .location::after {
+    content: '';
+    background-image: url('./../images/anders-jilden-295809.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
   }
-}
-.abilities::after {
-  content: '';
-  background-image: url('./../images/markus-spiske-109588.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.6;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-.abilities {
-  .js {
-    span {
-      display: inline-block;
-      margin-left: 5px;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      border: 1px white solid ;
-    }
-  }
-}
-.js0 {
-   background-color: white;
-}
-.js1 {
-  background-color: white;
-}
-.js2 {
-  background-color: white;
-}
-.abilities {
-  .reactjs {
-    span {
-      display: inline-block;
-      margin-left: 5px;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      border: 1px white solid ;
-    }
-  }
-}
-.re0 {
-  background-color: white;
-}
-.re1 {
-  background-color: white;
-}
-.abilities {
-  .htmlcss {
-    span {
-      display: inline-block;
-      margin-left: 5px;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      border: 1px solid white;
-    }
-  }
-}
-.htm0 {
-  background-color: white;
-}
-.htm1 {
-  background-color: white;
-}
-.htm2 {
-  background-color: white;
-}
-.htm3 {
-  background-color: white;
-}
-.abilities {
-  .jquery {
-    span {
-      display: inline-block;
-      margin-left: 5px;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      border: 1px white solid ;
-    }
-  }
-}
-.jq0 {
-  background-color: white;
-}
-.jq1 {
-  background-color: white;
-}
-.jq2 {
-  background-color: white;
-}
-.abilities {
-  .ajax {
-    span {
-      display: inline-block;
-      margin-left: 5px;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      border: 1px white solid
-    }
-  }
-}
-.aj0 {
-  background-color: white;
-}
-.aj1 {
-  background-color: white;
-}
-.pictures {
-  background-image: url('./../images/karl-fredrickson-15871.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  img {
-    height: 600px;
-    width: 500px;
-    margin-left: 450px;
-    border: solid 3px grey;
-    -webkit-box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);
-    -moz-box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);
-    box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);
-  }
-}
 
-.media {
-  margin-top: 50px;
-  height: 100px;
-  width: 300px;
-  .fb {
-    background-image: url('./../images/img_5483.png');
+  .map {
+    margin-top: 30px;
+    .google-map {
+      height: 250px;
+      width: 100%;
+    }
+  }
+  .study {
+    display: block;
+    position: relative;
+    margin-top: 50px;
+    height: 300px;
+    width: 100%;
+    .hatPic {
+      background-image: url('./../images/Hat-512.png');
+      width: 50px;
+      height: 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &:hover {
+      height: 330px;
+      border: 3px outset darkgrey;
+    }
+    &::after {
+      content: '';
+      background-image: url('./../images/jesus-kiteque-224069.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      opacity: 0.8;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+  .abilities {
+    display: block;
+    position: relative;
+    margin-top: 50px;
+    height: 400px;
+    width: 100%;
+    .brainPic {
+      background-image: url('./../images/if_ArtificialIntelligence12_2890565.png');
+      width: 50px;
+      height: 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  .abilities:hover {
+  height: 430px;
+  border: 3px outset darkgrey;
+  }
+  .abilities::after {
+    content: '';
+    background-image: url('./../images/markus-spiske-109588.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  .abilities {
+    .js {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 1px gold solid ;
+      }
+    }
+  }
+  .js0 {
+    background-color: goldenrod;
+  }
+  .js1 {
+    background-color: goldenrod;
+  }
+  .js2 {
+    background-color: goldenrod;
+  }
+  .abilities {
+    .reactjs {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 1px gold solid ;
+      }
+    }
+  }
+  .re0 {
+    background-color: goldenrod;
+  }
+  .re1 {
+    background-color: goldenrod;
+  }
+  .abilities {
+    .htmlcss {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 1px solid gold;
+      }
+    }
+  }
+  .htm0 {
+    background-color: goldenrod;
+  }
+  .htm1 {
+    background-color: goldenrod;
+  }
+  .htm2 {
+    background-color: goldenrod;
+  }
+  .htm3 {
+    background-color: goldenrod;
+  }
+  .abilities {
+    .jquery {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 1px gold solid ;
+      }
+    }
+  }
+  .jq0 {
+    background-color: goldenrod;
+  }
+  .jq1 {
+    background-color: goldenrod;
+  }
+  .jq2 {
+    background-color: goldenrod;
+  }
+  .abilities {
+    .ajax {
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: 1px gold solid
+      }
+    }
+  }
+  .aj0 {
+    background-color: goldenrod;
+  }
+  .aj1 {
+    background-color: goldenrod;
+  }
+  .pictures {
+    background-image: url('./../images/karl-fredrickson-15871.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    img {
+      height: 600px;
+      width: 500px;
+      margin-left: 480px;
+      border: outset 3px grey;
+      -webkit-box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);
+      -moz-box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);
+      box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);
+    }
+  }
+  .project {
+    h1 {
+      text-align: center;
+    }
+  }
+.contact {
+  margin-top: 70px;
+  text-align: center;
+}
+  .media {
+    margin-left: 570px;
+    margin-top: 50px;
+    height: 100px;
+    width: 300px;
+    .fb {
+      background-image: url('./../images/img_5483.png');
+      height: 40px;
+      width: 40px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+    }
+  }
+  .linkedin {
+    background-image: url('./../images/LinkedinBlack.png');
     height: 40px;
     width: 40px;
     background-size: cover;
@@ -296,9 +370,8 @@ header {
     background-position: center;
     display: inline-block;
   }
-}
-.linkedin {
-  background-image: url('./../images/LinkedinBlack.png');
+.instagram {
+  background-image: url('./../images/69366.png');
   height: 40px;
   width: 40px;
   background-size: cover;
@@ -306,5 +379,28 @@ header {
   background-position: center;
   display: inline-block;
 }
+
+.twitter {
+  background-image: url('./../images/Twitter̠BlackCircleLogo.png');
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+.pinter {
+  background-image: url('./../images/pinterest-icon-black.png');
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+.notfound {
+  text-align: center;
+}
+
 
 

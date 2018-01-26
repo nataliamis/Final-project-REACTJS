@@ -13,12 +13,44 @@ import {
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    class Loaders extends React.Component {
+        render () {
+            let divs = [];
+            for(let i = 0; i < 3; i++) {
+                divs.push(<div key = {`${i}`}/>);
+            }
+            return <div className = 'loader'>
+                { divs }
+            </div>
+        }
+    }
+
     class Home extends React.Component {
+        state = {
+            loading: true
+        };
+        componentDidMount () {
+            this.timeout = setTimeout(() => {
+                this.setState ({
+                    loading: false
+                });
+            }, 2700);
+        }
+
+        componentWillUnmount () {
+            clearTimeout(this.timeout)
+        }
+
         render() {
-            return <div className='homeStyle'>
+            if(this.state.loading === true) {
+                return <Loaders/>
+            }
+            return (<div className='homeStyle'>
                 <h1 className='home'>Witaj na mojej stronie!</h1>
                 <div className='picture'></div>
             </div>
+
+            )
         }
     }
 
@@ -127,8 +159,8 @@ document.addEventListener('DOMContentLoaded', function () {
             super(props);
 
             this.state = {
-                position: 1,
-                interval: null,
+              position: 1,
+              interval: null,
             };
         }
 
@@ -160,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     class Projects extends React.Component {
         render() {
-            return <div>
+            return <div className='project'>
                 <h1>Projekty</h1>
                 <Slider/>
             </div>
@@ -170,7 +202,11 @@ document.addEventListener('DOMContentLoaded', function () {
     class Contact extends React.Component {
         render() {
             const url1 = ['https://www.facebook.com/natalia.misiewicz'];
-            const url2 = ['https://www.facebook.com/natalia.misiewicz'];
+            const url2 = ['https://www.linkedin.pl'];
+            const url3 = ['https://www.instagram.pl'];
+            const url4 = ['https://www.twitter.pl'];
+            const url5 = ['https://www.pinterest.pl'];
+
 
             return <div className='contact'>
                 <h1>Kontakt</h1>
@@ -180,7 +216,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <div className = 'media'>
                     <a href = {url1}><div className='fb'></div></a>
-                    <a href = {url2}><div className='fb'></div></a>
+                    <a href = {url2}><div className='linkedin'></div></a>
+                    <a href = {url3}><div className='instagram'></div></a>
+                    <a href = {url4}><div className='twitter'></div></a>
+                    <a href = {url5}><div className='pinter'></div></a>
                 </div>
             </div>
 
@@ -202,9 +241,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    class NotFound extends React.Component {
+        render () {
+            return <div className= 'notfound'>
+            <h1>Niestety nie ma takiej strony! :(<br></br>
+                Wróć do <Link to = "/">strony głównej</Link> :)</h1>
+            </div>
+        }
+    }
 
     class App extends React.Component {
+
         render() {
+
             return (
                 <Router history={hashHistory}>
                     <Route path='/' component={Template}>
@@ -212,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <Route path='/aboutme' component={AboutMe}/>
                         <Route path='/projects' component={Projects}/>
                         <Route path='/contact' component={Contact}/>
+                        <Route path='*' component={NotFound}/>
                     </Route>
                 </Router>
             )
