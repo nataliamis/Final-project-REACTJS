@@ -202,10 +202,8 @@ document.addEventListener('DOMContentLoaded', function () {
     class Contact extends React.Component {
         render() {
             const url1 = ['https://www.facebook.com/natalia.misiewicz'];
-            const url2 = ['https://www.linkedin.pl'];
-            const url3 = ['https://www.instagram.pl'];
-            const url4 = ['https://www.twitter.pl'];
-            const url5 = ['https://www.pinterest.pl'];
+            const url2 = ['https://www.linkedin.com/in/natalia-misiewicz-a05429158/'];
+            const url3 = ['https://www.instagram.pl/natalieeee_m'];
 
 
             return <div className='contact'>
@@ -218,8 +216,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <a href = {url1}><div className='fb'></div></a>
                     <a href = {url2}><div className='linkedin'></div></a>
                     <a href = {url3}><div className='instagram'></div></a>
-                    <a href = {url4}><div className='twitter'></div></a>
-                    <a href = {url5}><div className='pinter'></div></a>
                 </div>
             </div>
 
