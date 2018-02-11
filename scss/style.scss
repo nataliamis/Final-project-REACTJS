@@ -7,17 +7,19 @@ body {
   height: 700px;
   width: 100%;
   background-color: white;
-  .loader {
-    & > div {
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      background-color: #ccc;
-      top: 45%;
-      border-radius: 50%;
+
+    .loader {
+      & > div {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: #ccc;
+        top: 45%;
+        border-radius: 50%;
+
+      }
     }
   }
-}
 
 .loader {
   & > div:nth-child(1) {
@@ -45,7 +47,6 @@ body {
   }
   header {
     width: 100%;
-    border: 2px outset palevioletred;
     .menu {
       display: flex;
       margin-left: 150px;
@@ -53,6 +54,9 @@ body {
         list-style: none;
         display: inline-block;
         flex-grow: 1;
+        @media (min-width: 800px) {
+          display: block;
+        }
       }
     }
   }
@@ -329,8 +333,8 @@ body {
     background-position: center;
     img {
       height: 600px;
-      width: 500px;
-      margin-left: 480px;
+      width: 450px;
+      margin-left: 360px;
       border: outset 3px grey;
       -webkit-box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);
       -moz-box-shadow: 9px 10px 16px 2px rgba(153,153,153,0.4);

@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         componentDidMount() {
             this.interval = setInterval(() => {
                 this.setState({
-                    position: this.state.position === 1 ? 0 : this.state.position + 1});
+                    position: this.state.position === 2 ? 0 : this.state.position + 1});
             }, 2000)
         };
 
@@ -180,7 +180,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 {img: './images/screen1.png',
                  url: 'https://nataliamis.github.io/course-HTML-CSS/'},
                 {img: './images/screen2.png',
-                 url: 'https://nataliamis.github.io/Binary-Decimal-Calculator/'}
+                 url: 'https://nataliamis.github.io/Binary-Decimal-Calculator/'},
+                {img: './images/screen3.png',
+                 url: 'https://nataliamis.github.io/To-do-list/'}
             ];
 
             return ( <div className='pictures'>
